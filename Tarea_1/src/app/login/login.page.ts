@@ -5,6 +5,7 @@ import { ModalErrorComponent } from '../componentes/modal-error/modal-error.comp
 import { ModalController } from '@ionic/angular';
 import { AutService } from '../service/aut.service';
 import { Router } from '@angular/router';
+import { MenuService } from '../service/menu.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginPage implements OnInit {
   constructor(
     private router: Router,
     private modalCtrl: ModalController,
-    private autSvc: AutService
+    private autSvc: AutService,
+    private menu: MenuService
   ) { }
 
   ngOnInit() {
@@ -28,6 +30,7 @@ export class LoginPage implements OnInit {
     this.autSvc.onLogin(this.user).then((user:any)=>{
       if(user!=null && user.code ==undefined){
         console.log('Successfully logged in!');
+        this.menu.setTitle("presupuesto");
         this.router.navigate(['/presupuesto']);
       }
       else{
