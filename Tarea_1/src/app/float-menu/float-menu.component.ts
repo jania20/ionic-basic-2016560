@@ -62,18 +62,22 @@ export class FloatMenuComponent  implements OnInit,OnDestroy {
     onAuthStateChanged(this.autService.getStateAuth(), user=>{
       if(user!=null && user != undefined){
         this.datosMenu =[
-          {nombre: 'Alumnos',enlace:'/alumnos',
+          {nombre: 'Alumnos',enlace:'main/alumnos',
     icono:'school-outline'},
-      {nombre: 'Receteas',enlace:'/receta',
+      {nombre: 'Receteas',enlace:'main/receta',
       icono:'restaurant-outline'},
-      {nombre: 'inicio',enlace:'/inicio',
+      {nombre: 'inicio',enlace:'main/inicio',
       icono:'navigate-outline'},
-      {nombre: 'Tabs',enlace:'/tabs',
+      {nombre: 'Turismo',enlace:'main/destinos',
+      icono:'airplane'},
+      {nombre: 'Presupuesto',enlace:'main/presupuesto',
+      icono:'cash-outline'},
+      {nombre: 'Tabs',enlace:'main/tabs',
       icono:'folder-outline'},
-      {nombre: 'login',enlace:'/login',
+      {nombre: 'login',enlace:'/login'
       icono:'log-in-outline'},
-          {nombre: 'logout',enlace:'/logout',
-          icono:'log-out-outline'}
+       {nombre: 'logout',enlace:'/logout',
+       icono:'log-out-outline'}
         ];
 
       }       
