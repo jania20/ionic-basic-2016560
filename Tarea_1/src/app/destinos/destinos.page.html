@@ -1,5 +1,3 @@
-onic-basic/src/app/destinos/destinos.page.html
-@@ -0,0 +1,51 @@
 <ion-header>
   <ion-toolbar color="primary">
       <ion-title>Destinos</ion-title>
@@ -50,9 +48,10 @@ onic-basic/src/app/destinos/destinos.page.html
               </ion-text>
           </ion-col>
           <ion-col>
-              <ion-text>
-                  En construccion
-                  <!--{{lugar.ubicacion}}-->
+            <ion-text *ngIf="lugar.latitud">
+                latitud: {{lugar.latitud}} ,longitud{{lugar.longitud}}
+            </ion-text>
+            <ion-text *ngIf="!lugar.latitud">
               </ion-text>
           </ion-col>
           <ion-col>
